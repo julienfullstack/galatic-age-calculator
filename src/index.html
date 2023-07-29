@@ -6,13 +6,47 @@
   <title>Galactic Age Calculator</title>
 </head>
 <body>
-  <h3>Enter your age in years to determine your age on other planets</h3>
-  <form id="triangle-checker-form">
-    <label for="length1">Enter your age in years:</label>
+  <h3>Enter your age in Earth years to determine your age on other planets:</h3>
+  <form id="age-checker-form">
+    <label for="length1">Enter your age in Earth years:</label>
     <input id="length1" type="number">
-
     <button type="submit">Submit</button>
   </form>
-  <div id="response"></div>
+<h3>Your age in:</h3>
+<p>Mercury Years: <span class="mercury-yrs"></span></p>
+<p>Venus Years:<span class="venus-yrs"></span></p>
+<p>Mars Years: <span class="mars-yrs"></span></p>
+<p>Jupiter Years:<span class="jupiter-yrs"></span></p>
+<p>Saturn Years: <span class="saturn-years"></span></p>
+<p>Neptune Years: <span class="neptune-years"></span></p>
+<p>Uranus Years: <span class="uranus-years"></span></p>
+
+<h3>Since your birthday...</h3>
+<p><span class="mercury-passed"></span> Mercury years have passed.</p>
+<p><span class="venus-passed"></span> Venus years have passed.</p>
+<p><span class="mars-passed"></span> Mars years have passed.</p>
+<p><span class="jupiter-passed"></span> Jupiter years have passed.</p>
+<p><span class="saturn-passed"></span> Saturn years have passed.</p>
+<p><span class="neptune-passed"></span> Neptune years have passed.</p>
+<p><span class="uranus-passed"></span> Uranus years have passed.</p>
+
+<h3>To determine how many years have yet to pass on different planets relative to your current Earth age and future age, please input:</h3>
+<form id="age-checker-form">
+  <label for="length2">Your age in Earth years: </label>
+  <input id="length2" type="number">
+  <label for="length3">A future age in Earth years: </label>
+  <input id="length3" type="number">
+  <button type="submit">Submit</button>
+</form>
+
+<h3>Between your current age of<span-class="current-age"></span-class> years and your future <span-class="future-age"></span-class> birthday:</h3>
+<p><span class="mercury-future"></span> Mercury years have yet to pass.</p>
+<p><span class="venus-future"></span> Venus years have yet to pass.</p>
+<p><span class="mars-future"></span> Mars years have yet to pass.</p>
+<p><span class="jupiter-future"></span> Jupiter years have yet to pass.</p>
+<p><span class="saturn-future"></span> Saturn years have yet to pass.</p>
+<p><span class="neptune-future"></span> Neptune years have yet to pass.</p>
+<p><span class="uranus-future"></span> Uranus years have yet to pass.</p>
+
 </body>  
 </html>
