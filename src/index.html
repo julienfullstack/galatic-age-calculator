@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <script type="text/javascript" src="bundle.js"></script>
   <link rel="stylesheet" href="./../css/styles.css">
   <title>Galactic Age Calculator</title>
 </head>
 <body>
-  <h3>Enter your age in Earth years to determine your age on other planets:</h3>
-  <form id="age-checker-form">
-    <label for="inputtedAge">Enter your age in Earth years:</label>
-    <input id="inputtedAge" type="number">
-    <button type="submit">Submit</button>
+  <h3>Enter your birthdate to determine your age on other planets:</h3>
+  <form id="birthdate-form">
+    <label for="inputtedBirthdate">Enter your birthdate (MM/DD/YYYY):</label>
+    <input id="inputtedBirthdate" type="text" required>
+    <button id="birthdate" type="submit">Submit</button>
   </form>
-<h3>Your age in:</h3>
-<p>Mercury Years: <span class="mercury-yrs"></span></p>
-<p>Venus Years:<span class="venus-yrs"></span></p>
-<p>Mars Years: <span class="mars-yrs"></span></p>
-<p>Jupiter Years:<span class="jupiter-yrs"></span></p>
-<p>Saturn Years: <span class="saturn-years"></span></p>
-<p>Neptune Years: <span class="neptune-years"></span></p>
-<p>Uranus Years: <span class="uranus-years"></span></p>
+  
+  <h3>Your age on other planets:</h3>
+  <p>Mercury Years: <span class="mercury-age"></span></p>
+  <p>Venus Years: <span class="venus-age"></span></p>
+  <p>Mars Years: <span class="mars-age"></span></p>
+  <p>Jupiter Years: <span class="jupiter-age"></span></p>
+  <p>Saturn Years: <span class="saturn-age"></span></p>
+  <p>Neptune Years: <span class="neptune-age"></span></p>
+  <p>Uranus Years: <span class="uranus-age"></span></p>
+  
+  <h3>Years passed on other planets since your birthdate:</h3>
+  <p>Mercury Years: <span class="mercury-years-passed"></span></p>
+  <p>Venus Years: <span class="venus-years-passed"></span></p>
+  <p>Mars Years: <span class="mars-years-passed"></span></p>
+  <p>Jupiter Years: <span class="jupiter-years-passed"></span></p>
+  <p>Saturn Years: <span class="saturn-years-passed"></span></p>
+  <p>Neptune Years: <span class="neptune-years-passed"></span></p>
+  <p>Uranus Years: <span class="uranus-years-passed"></span></p>
 
-<h3>Since your birthday...</h3>
-<p><span class="mercury-passed"></span> Mercury years have passed.</p>
-<p><span class="venus-passed"></span> Venus years have passed.</p>
-<p><span class="mars-passed"></span> Mars years have passed.</p>
-<p><span class="jupiter-passed"></span> Jupiter years have passed.</p>
-<p><span class="saturn-passed"></span> Saturn years have passed.</p>
-<p><span class="neptune-passed"></span> Neptune years have passed.</p>
-<p><span class="uranus-passed"></span> Uranus years have passed.</p>
+  <h3>Calculate the Difference in Years Between Your Current Age and a Future Birthdate on Other Planets</h3>
+  <form id="age-difference-form">
+    <label for="currentAge">Enter your current age (MM/DD/YYYY):</label>
+    <input id="currentAge" type="text" required>
+    <label for="futureBirthdate">Enter the future birthdate (MM/DD/YYYY):</label>
+    <input id="futureBirthdate" type="text" required>
+    <button id="age-difference" type="submit">Calculate</button>
+  </form>
+  
+  <h3>Age difference on other planets:</h3>
+  <p>Mercury Years: <span class="mercury-age-difference"></span></p>
+  <p>Venus Years: <span class="venus-age-difference"></span></p>
+  <p>Mars Years: <span class="mars-age-difference"></span></p>
+  <p>Jupiter Years: <span class="jupiter-age-difference"></span></p>
+  <p>Saturn Years: <span class="saturn-age-difference"></span></p>
+  <p>Neptune Years: <span class="neptune-age-difference"></span></p>
+  <p>Uranus Years: <span class="uranus-age-difference"></span></p>
 
-<h3>To determine how many years have yet to pass on different planets relative to your current Earth age and future age, please input:</h3>
-<form id="years-passed-form">
-  <label for="earthAge">Your age in Earth years: </label>
-  <input id="earthAge" type="number">
-  <label for="futureAge">A future age in Earth years: </label>
-  <input id="futureAge" type="number">
-  <button type="submit">Submit</button>
-</form>
-
-<h3>Between your current age of<span-class="current-age"></span-class> years and your future <span-class="future-age"></span-class> birthday:</h3>
-<p><span class="mercury-future"></span> Mercury years have yet to pass.</p>
-<p><span class="venus-future"></span> Venus years have yet to pass.</p>
-<p><span class="mars-future"></span> Mars years have yet to pass.</p>
-<p><span class="jupiter-future"></span> Jupiter years have yet to pass.</p>
-<p><span class="saturn-future"></span> Saturn years have yet to pass.</p>
-<p><span class="neptune-future"></span> Neptune years have yet to pass.</p>
-<p><span class="uranus-future"></span> Uranus years have yet to pass.</p>
-
-</body>  
+  <script src="index.js"></script>
+</body>
 </html>
