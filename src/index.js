@@ -2,6 +2,8 @@
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import './css/styles.css';
 
+// BUSINESS LOGIC //
+
 class AgeCalculator {
   constructor() {
     const birthdayDate = new Date();
@@ -83,6 +85,9 @@ class AgeCalculator {
     };
   }
 }
+
+
+// UI LOGIC //
 
 function handleBirthdate(event) {
   event.preventDefault();
