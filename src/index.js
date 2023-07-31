@@ -1,9 +1,8 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import BdayCalculator from './calculator.js';
-import yearsToPass from './calculator.js';
-
+import BdayCalculator() from './calculator.js';
+import yearsToPass() from './calculator.js';
 
 
 /// UI LOGIC ///
