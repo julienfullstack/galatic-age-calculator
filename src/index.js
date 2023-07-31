@@ -1,7 +1,6 @@
-
 function calculateAgeOnOtherPlanets(birthdate) {
-  const currentDate = new Date();
-  const earthAge = currentDate.getFullYear() - birthdate.getFullYear();
+  const birthdayDate = new Date();
+  const earthAge = birthdayDate.getFullYear() - birthdate.getFullYear();
   const mercuryAge = earthAge / 0.24;
   const venusAge = earthAge / 0.62;
   const marsAge = earthAge / 1.88;
@@ -21,8 +20,8 @@ function calculateAgeOnOtherPlanets(birthdate) {
   };
 }
 
-function calculateYearsPassed(birthdate, currentDate) {
-  const earthAge = currentDate.getFullYear() - birthdate.getFullYear();
+function calculateYearsPassed(birthdate, birthdayDate) {
+  const earthAge = birthdayDate.getFullYear() - birthdate.getFullYear();
   const mercuryYearsPassed = earthAge / 0.24;
   const venusYearsPassed = earthAge / 0.62;
   const marsYearsPassed = earthAge / 1.88;
@@ -31,13 +30,13 @@ function calculateYearsPassed(birthdate, currentDate) {
   const neptuneYearsPassed = earthAge / 164.8;
   const uranusYearsPassed = earthAge / 84.02;
 
-  const mercuryYearsSinceBirth = mercuryYearsPassed - (currentDate.getMonth() / 12 + currentDate.getDate() / 365) / 0.24;
-  const venusYearsSinceBirth = venusYearsPassed - (currentDate.getMonth() / 12 + currentDate.getDate() / 365) / 0.62;
-  const marsYearsSinceBirth = marsYearsPassed - (currentDate.getMonth() / 12 + currentDate.getDate() / 365) / 1.88;
-  const jupiterYearsSinceBirth = jupiterYearsPassed - (currentDate.getMonth() / 12 + currentDate.getDate() / 365) / 11.86;
-  const saturnYearsSinceBirth = saturnYearsPassed - (currentDate.getMonth() / 12 + currentDate.getDate() / 365) / 29.46;
-  const neptuneYearsSinceBirth = neptuneYearsPassed - (currentDate.getMonth() / 12 + currentDate.getDate() / 365) / 164.8;
-  const uranusYearsSinceBirth = uranusYearsPassed - (currentDate.getMonth() / 12 + currentDate.getDate() / 365) / 84.02;
+  const mercuryYearsSinceBirth = mercuryYearsPassed - (birthdayDate.getMonth() / 12 + birthdayDate.getDate() / 365) / 0.24;
+  const venusYearsSinceBirth = venusYearsPassed - (birthdayDate.getMonth() / 12 + birthdayDate.getDate() / 365) / 0.62;
+  const marsYearsSinceBirth = marsYearsPassed - (birthdayDate.getMonth() / 12 + birthdayDate.getDate() / 365) / 1.88;
+  const jupiterYearsSinceBirth = jupiterYearsPassed - (birthdayDate.getMonth() / 12 + birthdayDate.getDate() / 365) / 11.86;
+  const saturnYearsSinceBirth = saturnYearsPassed - (birthdayDate.getMonth() / 12 + birthdayDate.getDate() / 365) / 29.46;
+  const neptuneYearsSinceBirth = neptuneYearsPassed - (birthdayDate.getMonth() / 12 + birthdayDate.getDate() / 365) / 164.8;
+  const uranusYearsSinceBirth = uranusYearsPassed - (birthdayDate.getMonth() / 12 + birthdayDate.getDate() / 365) / 84.02;
 
   return {
     Mercury: mercuryYearsSinceBirth,
@@ -51,15 +50,17 @@ function calculateYearsPassed(birthdate, currentDate) {
 }
 
 function calculateAgeDifference(currentAge, futureBirthdate) {
-  const currentDate = new Date();
-  const earthAge = currentDate.getFullYear() - currentAge.getFullYear();
-  const mercuryAgeDifference = (futureBirthdate.getFullYear() - currentAge.getFullYear()) / 0.24;
-  const venusAgeDifference = (futureBirthdate.getFullYear() - currentAge.getFullYear()) / 0.62;
-  const marsAgeDifference = (futureBirthdate.getFullYear() - currentAge.getFullYear()) / 1.88;
-  const jupiterAgeDifference = (futureBirthdate.getFullYear() - currentAge.getFullYear()) / 11.86;
-  const saturnAgeDifference = (futureBirthdate.getFullYear() - currentAge.getFullYear()) / 29.46;
-  const neptuneAgeDifference = (futureBirthdate.getFullYear() - currentAge.getFullYear()) / 164.8;
-  const uranusAgeDifference = (futureBirthdate.getFullYear() - currentAge.getFullYear()) / 84.02;
+  const birthdayDate = new Date(currentAge);
+  const futureBirthdateDate = new Date(futureBirthdate);
+
+  const earthAge = futureBirthdateDate.getFullYear() - birthdayDate.getFullYear();
+  const mercuryAgeDifference = earthAge / 0.24;
+  const venusAgeDifference = earthAge / 0.62;
+  const marsAgeDifference = earthAge / 1.88;
+  const jupiterAgeDifference = earthAge / 11.86;
+  const saturnAgeDifference = earthAge / 29.46;
+  const neptuneAgeDifference = earthAge / 164.8;
+  const uranusAgeDifference = earthAge / 84.02;
 
   return {
     Earth: earthAge,
@@ -78,10 +79,10 @@ function handleBirthdate(event) {
 
   const inputtedBirthdate = document.getElementById('inputtedBirthdate').value;
   const birthdate = new Date(inputtedBirthdate);
-  const currentDate = new Date();
+  const birthdayDate = new Date();
 
   const ageOnOtherPlanets = calculateAgeOnOtherPlanets(birthdate);
-  const yearsPassed = calculateYearsPassed(birthdate, currentDate);
+  const yearsPassed = calculateYearsPassed(birthdate, birthdayDate);
 
   document.querySelector('.mercury-age').textContent = ageOnOtherPlanets.Mercury.toFixed(2);
   document.querySelector('.venus-age').textContent = ageOnOtherPlanets.Venus.toFixed(2);
@@ -109,8 +110,7 @@ function handleAgeDifference(event) {
   const futureBirthdate = document.getElementById('futureBirthdate').value;
 
   const ageDifference = calculateAgeDifference(currentAge, futureBirthdate);
-
-  document.querySelector(".earth-age-difference").textContent = ageDifference.Earth.toFixed(2);
+  
   document.querySelector(".mercury-age-difference").textContent = ageDifference.Mercury.toFixed(2);
   document.querySelector(".venus-age-difference").textContent = ageDifference.Venus.toFixed(2);
   document.querySelector(".mars-age-difference").textContent = ageDifference.Mars.toFixed(2);
