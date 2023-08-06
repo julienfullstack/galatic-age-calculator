@@ -33,40 +33,37 @@ calculateYearsPassed(age, pastBirthdayAge) {
     const uranusYearsPassed = earthYearsPassed / 84.02;
   
     return {
-      Earth: earthYearsPassed,
-      Mercury: mercuryYearsPassed,
-      Venus: venusYearsPassed,
-      Mars: marsYearsPassed,
-      Jupiter: jupiterYearsPassed,
-      Saturn: saturnYearsPassed,
-      Neptune: neptuneYearsPassed,
-      Uranus: uranusYearsPassed
+      Earth: earthYearsPassed.toFixed(2),
+      Mercury: mercuryYearsPassed.toFixed(2),
+      Venus: venusYearsPassed.toFixed(2),
+      Mars: marsYearsPassed.toFixed(2),
+      Jupiter: jupiterYearsPassed.toFixed(2),
+      Saturn: saturnYearsPassed.toFixed(2),
+      Neptune: neptuneYearsPassed.toFixed(2),
+      Uranus: uranusYearsPassed.toFixed(2)
     };
   }
   
-    calculateAgeDifference(currentAge, futureBirthdate) {
-      const birthdayDate = new Date(currentAge);
-      const futureBirthdateDate = new Date(futureBirthdate);
-      const earthAge = futureBirthdateDate.getFullYear() - birthdayDate.getFullYear();
-      const mercuryAgeDifference = earthAge / 0.24; 
-      const venusAgeDifference = earthAge / 0.62;
-      const marsAgeDifference = earthAge / 1.88;
-      const jupiterAgeDifference = earthAge / 11.86;
-      const saturnAgeDifference = earthAge / 29.46;
-      const neptuneAgeDifference = earthAge / 164.8;
-      const uranusAgeDifference = earthAge / 84.02;
-    
-      return {
-        Earth: earthAge,
-        Mercury: mercuryAgeDifference,
-        Venus: venusAgeDifference,
-        Mars: marsAgeDifference,
-        Jupiter: jupiterAgeDifference,
-        Saturn: saturnAgeDifference,
-        Neptune: neptuneAgeDifference,
-        Uranus: uranusAgeDifference
-      };
-    }
-
-    
+calculateYearsUntilFutureBirthday(currentAge, futureBirthdayAge) {
+    const earthYearsLeft = futureBirthdayAge - currentAge;
+    const mercuryYearsLeft = earthYearsLeft / 0.24;
+    const venusYearsLeft = earthYearsLeft / 0.62;
+    const marsYearsLeft = earthYearsLeft / 1.88;
+    const jupiterYearsLeft = earthYearsLeft / 11.86;
+    const saturnYearsLeft = earthYearsLeft / 29.46;
+    const neptuneYearsLeft = earthYearsLeft / 164.8;
+    const uranusYearsLeft = earthYearsLeft / 84.02;
+  
+    return {
+      Earth: earthYearsLeft.toFixed(2),
+      Mercury: mercuryYearsLeft.toFixed(2),
+      Venus: venusYearsLeft.toFixed(2),
+      Mars: marsYearsLeft.toFixed(2),
+      Jupiter: jupiterYearsLeft.toFixed(2),
+      Saturn: saturnYearsLeft.toFixed(2),
+      Neptune: neptuneYearsLeft.toFixed(2),
+      Uranus: uranusYearsLeft.toFixed(2)
+    };
+  }
+  
   }
