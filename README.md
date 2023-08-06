@@ -26,6 +26,8 @@
 * _Open folder in code editer OR_
 * _Run in browser_
 *_Install ESLint, Jest, webpack, and NPM
+*_Open terminal and run "npm start"
+
 
 ## Known Bugs
 
