@@ -1,6 +1,13 @@
 import AgeCalculator from '../src/age-calculator.js';
 
 describe('AgeCalculator', () => {
+
+  it('returns the earth age of the user', () => {
+    const ageCalculator = new AgeCalculator(43);
+    const result = 43;
+    expect(result).toEqual(ageCalculator.earthAge);
+  })
+
   it('calculates age on other planets', () => {
     const ageCalculator = new AgeCalculator(43);
     const result = ageCalculator.calculateAgeOnOtherPlanets();
