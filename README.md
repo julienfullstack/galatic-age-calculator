@@ -25,8 +25,13 @@
 ## Setup/Installation Requirements
 * _Open folder in code editer OR_
 * _Run in browser_
-*_Install ESLint, Jest, webpack, and NPM
-*_Open terminal and run "npm start"
+*_Open terminal_
+*_Navigate to root folder_
+*_Install dependencies with "npm install"
+*_To build application, run "npm run build"  
+*_Open the application using "npm start"
+*_Using "npm test" to run tests from __tests__
+*_Find and fix problems in the code using "npm lint"
 
 
 ## Known Bugs
